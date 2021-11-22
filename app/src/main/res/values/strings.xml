@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Contacts App</string>
+    <string name="grant_permission_message">Permission must be granted in order to display contacts information</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="dummy_contact_name">Ganesh Raut</string>
+    <string name="dummy_contact_number">+91 9689333333</string>
+</resources>
