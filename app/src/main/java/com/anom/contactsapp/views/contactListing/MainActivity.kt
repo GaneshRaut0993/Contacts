@@ -31,8 +31,11 @@ class MainActivity : AppCompatActivity(), ContactSelectionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         contactsArrayList.clear()
+
         viewModelFactory = ViewModelFactory(application)
+
         viewModel = ViewModelProvider(
             this, viewModelFactory
         )[ContactsListViewModel::class.java]
@@ -54,7 +57,7 @@ class MainActivity : AppCompatActivity(), ContactSelectionListener {
         } else {
             val contactsObserver = Observer<ArrayList<Contact>> { newContactsList ->
                 // Update the UI
-                if (!newContactsList.isEmpty()) {
+                if (newContactsList.isNotEmpty()) {
                     recyclerview.adapter = ContactAdapter(newContactsList, this)
                 } else {
                     Toast.makeText(this, "No contacts to show", Toast.LENGTH_SHORT)
